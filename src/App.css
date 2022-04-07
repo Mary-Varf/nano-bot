@@ -1,0 +1,140 @@
+@font-face {
+    font-family: "Ubuntu";
+    src: url('./fonts/UbuntuRegular.woff2') format("woff2");
+    font-weight: 400;
+    font-display: swap;
+  }
+  html {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f2f2f2;
+  }
+:root {
+    --font-family: "Ubuntu", sans-serif;
+    --content-width: 1260px;
+    --container-offset: 15px;
+    --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  
+    --light-color: #fff;
+    --color-bot: #9db0fa;
+    --color-storm: #787a80;
+    --color-ebony: #1e212c;
+    --color-white: #fff;
+    --color-primary: #ff5a30;
+    --color-athens: #f4f5f7;
+  
+    --main-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.21);
+    --dialog-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.11);
+  
+    --grid-gap: 30px;
+  }
+  
+
+.icon-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    background-image: url(./img/chat.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    cursor: pointer;
+    z-index: 100;
+    transition: 0.3s background-size ease-in-out;
+    box-shadow: var(--main-shadow);
+}
+.icon-container:hover {
+    background-size: 60% 60%;
+    box-shadow: var(--main-shadow);
+}
+.icon-container.opened {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-storm);
+    background-size: 70% 70%;
+    z-index: -1;
+}
+
+.chat-container{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 280px;
+    height: 400px;
+    background-color: lightgray;
+    border-radius: 20px;
+    box-shadow: var(--main-shadow);
+    z-index: 100;
+
+}
+
+.input-reset {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 0;
+    background-color: #fff;
+  }
+  
+.chat-form {
+    position: absolute;
+    bottom:0;
+    left: 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+.dialog-container{
+    padding:20px;
+}
+.dialog{
+    padding: 10px;
+    background-color: var(--color-bot);
+    border-radius: 10px;
+    margin: 10px 0;
+    position: relative;
+    z-index: 2;
+    box-shadow: var(--dialog-shadow);
+}
+.robot-answer {
+    margin-right: 20px;
+}
+.robot-answer:before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    color:  var(--color-bot);
+    background-color: inherit;
+    left:0;
+    width: 0;
+    height: 0; 
+    border-top: 10px solid currentColor;
+    border-bottom: 10px solid lightgray;
+    border-left: 10px solid currentColor;
+    z-index: 1;
+}
+.user-answer {
+    margin-left: 20px;
+    background-color: #fff;
+}
+.user-answer:before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    color:  var(--color-white);
+    background-color: inherit;
+    right:0;
+    width: 0;
+    height: 0; 
+    border-top: 10px solid currentColor;
+    border-bottom: 10px solid lightgray;
+    border-right: 10px solid currentColor;
+    z-index: 1;
+}

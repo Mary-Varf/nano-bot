@@ -26,13 +26,23 @@
     --color-white: #fff;
     --color-primary: #ff5a30;
     --color-athens: #f4f5f7;
+    --color-hover: #a540ed;
   
     --main-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.21);
     --dialog-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.11);
-  
-    --grid-gap: 30px;
   }
-  
+::-webkit-scrollbar {
+    background-color: var(--color-storm);
+    border-radius: 5px;
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    width:10px;
+ }
+::-webkit-scrollbar-thumb { 
+    border-radius: 5px;
+    background-color: var(--color-primary);
+ }
 
 .icon-container {
     position: absolute;
@@ -66,6 +76,7 @@
 .chat-container{
     position: absolute;
     bottom: 20px;
+    padding: 8px 0 0;
     right: 20px;
     width: 280px;
     height: 400px;
@@ -73,7 +84,6 @@
     border-radius: 20px;
     box-shadow: var(--main-shadow);
     z-index: 100;
-
 }
 
 .input-reset {
@@ -93,6 +103,8 @@
 }
 .dialog-container{
     padding:20px;
+    overflow-y: scroll;
+    height: 300px;
 }
 .dialog{
     padding: 10px;
@@ -137,4 +149,32 @@
     border-bottom: 10px solid lightgray;
     border-right: 10px solid currentColor;
     z-index: 1;
+}
+.button-reset {
+    box-shadow: none;
+    border: none;
+}
+.button {
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    box-shadow: var(--main-shadow);
+    cursor: pointer;
+}
+.button:hover {
+    background-color: var(--color-hover);
+}
+.button-clear{
+    background-image: url("./img/clear.svg");
+    background-size: 50% 50%;
+}
+.button-send {
+    background-image: url("./img/send.svg");
+    background-size: 80% 80%;
+}
+.form-button {
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 10px;
 }
